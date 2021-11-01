@@ -3,6 +3,7 @@ package hasher
 
 import (
 	"crypto/sha256"
+	"encoding/base64"
 	"errors"
 )
 
@@ -12,7 +13,7 @@ func HashPassword(password string) (string, error) {
 		return "", errors.New("Password is empty")
 	}
 	checksum := sha256.Sum256([]byte(password))
-	hashedPass := string(checksum[:])
+	hashedPass := string(base64.StdEncoding.EncodeToString(checksum[:]))
 	return hashedPass, nil
 }
 
