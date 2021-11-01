@@ -1,4 +1,4 @@
-// Package hasher provides functions to work with password hashes
+// Package hasher provides functions to work with password hashing
 package hasher
 
 import (
